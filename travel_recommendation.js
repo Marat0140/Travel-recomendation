@@ -10,7 +10,7 @@ function searchCondition() {
               console.log(country)
               if (country) {
                   country.cities.forEach((city) =>{
-                      resultDiv.innerHTML += `<img src="${city.imageURL}" alt="hjh">`;
+                      resultDiv.innerHTML += `<img src="${city.imageUrl}" alt="hjh">`;
                       resultDiv.innerHTML += `<h3>${city.name}</h3>`;
                       resultDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
                   })
