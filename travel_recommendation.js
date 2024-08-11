@@ -8,11 +8,12 @@ function searchCondition() {
               const country = data.countries.find(item => item.name.toLowerCase() === input);
               if (country) {
                   country.cities.forEach((city) =>{
-                      resultDiv.innerHtml += `<div id="${city.name}"></div>`
-                      const cityDiv = document.getElementById(city.name);
+                      const cityDiv = document.createElement('div');
+                      cityDiv.setAttribute("id", city.name);
                       cityDiv.innerHTML += `<img src="${city.imageUrl}" alt="hjh">`;
                       cityDiv.innerHTML += `<h3>${city.name}</h3>`;
                       cityDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
+                      resultDiv.append(cityDiv)
                   })
               } else {
                   resultDiv.innerHTML = 'Condition not found.';
