@@ -106,4 +106,8 @@ aside p {
     width: 200px;
     height: 100px;
   }
-  
+
+h3.body {
+    background: red;
+    color: blue;
+}
