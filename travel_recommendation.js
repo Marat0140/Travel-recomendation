@@ -3,17 +3,19 @@ function searchCondition() {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
     fetch('travel_recommendation_api.json')
-      .then(data => {
-          console.log("data",data.json().then((r)=> console.log(r)))
-        const country = data.countries.find(item => item.name.toLowerCase() === input);
-        if (country) {
-          const description = country.description;
-          resultDiv.innerHTML += `<img src="${country.imageURL}" alt="hjh">`;
-          resultDiv.innerHTML += `<h3>${country.name}</h3>`;
-          resultDiv.innerHTML += `<p><strong>Description:</strong> ${description}</p>`;
-        } else {
-          resultDiv.innerHTML = 'Condition not found.';
-        }
+      .then(response => {
+          response.json().then((data)=> {
+              //console.log(r)
+              const country = data.countries.find(item => item.name.toLowerCase() === input);
+              if (country) {
+                  const description = country.description;
+                  resultDiv.innerHTML += `<img src="${country.imageURL}" alt="hjh">`;
+                  resultDiv.innerHTML += `<h3>${country.name}</h3>`;
+                  resultDiv.innerHTML += `<p><strong>Description:</strong> ${description}</p>`;
+              } else {
+                  resultDiv.innerHTML = 'Condition not found.';
+              }
+          })
       })
       .catch(error => {
         console.error('Error:', error);
