@@ -73,6 +73,8 @@ p.body {
     position: relative;
     left: 40px;
     top: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }
 
   /* Basic CSS for the report section */
