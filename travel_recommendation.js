@@ -4,6 +4,7 @@ function searchCondition() {
     resultDiv.innerHTML = '';
     fetch('travel_recommendation_api.json')
       .then(data => {
+          console.log("data",data)
         const country = data.countries.find(item => item.name.toLowerCase() === input);
         if (country) {
           const description = country.description;
