@@ -11,7 +11,7 @@ function searchCondition() {
                       const cityDiv = document.createElement('div');
                       cityDiv.setAttribute("id", city.name);
                       cityDiv.innerHTML += `<img src="${city.imageUrl}" alt="hjh">`;
-                      cityDiv.innerHTML += `<h3>${city.name}</h3>`;
+                      cityDiv.innerHTML += `<h3 class="body">${city.name}</h3>`;
                       cityDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
                       resultDiv.append(cityDiv)
                   })
