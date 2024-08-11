@@ -7,6 +7,7 @@ function searchCondition() {
           response.json().then((data)=> {
               //console.log(r)
               const country = data.countries.find(item => item.name.toLowerCase() === input);
+              console.log(country)
               if (country) {
                   const description = country.description;
                   resultDiv.innerHTML += `<img src="${country.imageURL}" alt="hjh">`;
