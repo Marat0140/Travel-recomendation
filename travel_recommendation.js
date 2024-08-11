@@ -3,9 +3,8 @@ function searchCondition() {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
     fetch('travel_recommendation_api.json')
-      .then(response => {
-          response.json().then((data)=> {
-              //console.log(r)
+      .then(response => response.json())  
+      .then((data)=> {
               const country = data.countries.find(item => item.name.toLowerCase() === input);
               console.log(country)
               if (country) {
@@ -17,7 +16,6 @@ function searchCondition() {
               } else {
                   resultDiv.innerHTML = 'Condition not found.';
               }
-          })
       })
       .catch(error => {
         console.error('Error:', error);
